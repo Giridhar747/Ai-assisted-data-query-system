@@ -38,9 +38,6 @@
     <li><a href="#references-for-datasets">References for datasets</a></li>
   </ol>
 </details>
-
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 <div align="center">
@@ -50,119 +47,31 @@ The AI Data Query System Chatbot is a sophisticated tool crafted to streamline d
 #### 
 #### All of our models have an accuracy of 94%+.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 ### Inspiration <img src="images/inspo.png" alt="png" width="30">
-The inspiration behind the creation of Diagnosify stems from the pressing need for more accurate, efficient, and accessible methods of brain disease diagnosis in the modern healthcare landscape. The convergence of medical expertise and technological advancements has the potential to revolutionize the way diseases are detected and treated. Several key factors have motivated the inception of Diagnosify:
+Our inspiration for developing the AI-Assisted Data Query System (ADQS) stemmed from a deep-seated belief in the transformative power of accessible data analysis tools. Here's how our motivations drove the creation of ADQS:
 
-1. <b>Early Detection and Intervention: </b> Timely detection of diseases is often a critical factor in determining patient outcomes. Many medical conditions, such as brain tumors and neurodegenerative disorders like Alzheimer's disease, can exhibit subtle symptoms in their early stages. Diagnosify seeks to provide healthcare professionals with tools that enable them to identify these diseases at an early phase, leading to more effective treatment strategies and improved patient quality of life.
+1.<b> **Empowering Decision-Making:** <b>We recognized the pivotal role of timely access to relevant data in making informed decisions. ADQS was conceived to streamline this process, ensuring users can quickly retrieve information to enhance their decision-making capabilities.
 
-2. <b>Limited Resources and Expertise: </b>In various regions around the world, access to specialized medical expertise is limited, especially in rural or underserved areas. Diagnosify's technology-driven approach aims to bridge this gap by providing medical professionals with supplementary diagnostic tools. These tools can aid in making accurate assessments and decisions, even in areas with fewer medical resources.
+2. <b>**Democratizing Data Access:** <b> We aimed to break down barriers to data analysis by designing ADQS to be user-friendly and accessible to everyone, regardless of their level of expertise. From beginners to seasoned professionals, ADQS provides intuitive tools for navigating and understanding complex datasets.
 
-3. <b>Technological Advancements in Medical Imaging: </b> The rapid advancements in medical imaging technologies, such as MRI, CT scans, and dermatological imaging, have led to an abundance of data that can potentially be harnessed for disease diagnosis. Diagnosify leverages these technologies to analyze intricate medical images and data, extracting valuable insights that can aid in disease classification.
+3.<b> **Harnessing Technological Advancements:**<b> Inspired by the rapid advancements in AI technology, we leveraged cutting-edge algorithms to create ADQS. By harnessing these advancements, we aimed to provide users with a smart assistant capable of efficiently handling their data queries and analysis tasks.
 
-### Social Impact <img src="images/impact.png" alt="png" width="30">
-The "Diagnosify - Brain Disease Classification" project has the potential to create significant social impact in several ways:
+Through the development of ADQS, our goal is to democratize data analysis, making it easier and more accessible for individuals and organizations to leverage the power of data for informed decision-making and improved outcomes.
 
-1. Early Detection and Treatment: By accurately predicting diseases like brain tumors, Alzheimer's, and Parkinson's Disease, the project can enable early detection and intervention. Early diagnosis often leads to more effective treatment options and improved patient outcomes.
-2. Healthcare Access: Diagnosify can extend medical expertise to underserved and remote areas where access to specialized healthcare may be limited. This democratization of medical diagnosis can ensure that individuals in various geographical locations receive timely and accurate predictions.
-3. Reduced Misdiagnosis: Machine learning algorithms used in the project can help reduce instances of misdiagnosis by analyzing intricate patterns that might be challenging for human experts to identify. This can prevent unnecessary treatments and procedures while increasing the accuracy of diagnoses.
 
-4. Collaborative Healthcare: The project promotes collaboration between medical professionals and technology. This synergy can lead to a more comprehensive understanding of diseases and their characteristics, fostering a collaborative approach to healthcare.
 
 ### Built With <img src="images/built.png" alt="png" width="30">
-The power of Intel oneAPI, Python, Jupyter, TensorFlow, and Streamlit to create an innovative solution for predicting brain diseases using machine learning. Python's versatility and readability serve as the foundation, while Jupyter notebooks facilitate interactive model development. TensorFlow powers the machine learning model construction and training. Intel oneAPI enhances computational performance, enabling efficient predictions. Streamlit simplifies the deployment process by transforming the project into an interactive web application, allowing users to input data and receive predictions seamlessly.
+Harnessing the capabilities of Python, HTML, CSS, JavaScript, and Flask, we've created an intuitive AI-Assisted Data Query System (ADQS) that revolutionizes the way users interact with data. Python's versatility and simplicity form the backbone of ADQS, ensuring smooth data processing and backend functionality. HTML and CSS combine to craft a visually engaging and user-friendly interface, while JavaScript adds interactivity and responsiveness to the frontend. Flask ties everything together, facilitating seamless communication between the frontend and backend components of our system. With this powerful combination of technologies, ADQS empowers users to effortlessly query and analyze data, making informed decisions with ease.
 
 * [![python][python]][python-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- Intel one api -->
-## Intel® oneAPI
-Intel® OneAPI is a comprehensive development platform for building high-performance, cross-architecture applications. It provides a unified programming model, tools, and libraries that allow developers to optimize their applications for Intel® CPUs, GPUs, FPGAs, and other hardware. Intel® OneAPI includes support for popular programming languages like C++, Python, and Fortran, as well as frameworks for deep learning, high-performance computing, and data analytics. With Intel® OneAPI, developers can build applications that can run on a variety of hardware platforms, and take advantage of the performance benefits of Intel® architectures.
-<!-- Use of oneAPI in our project -->
-### Use of oneAPI in our project
-
-In this section, we'll outline how we utilized various Intel® oneAPI libraries and frameworks to enhance the performance and efficiency of our models.
-
-* <b>Intel® oneAPI Data Analytics Library (oneDAL)</b>
-
-The oneAPI Data Analytics Library (oneDAL) is a versatile machine learning library that accelerates big data analysis at all stages of the pipeline. To leverage the power of oneDAL, We employed the Intel® Extension for Scikit-learn*, an integral part of oneDAL that enhances existing scikit-learn code by patching it.
-
-Installation:
-<code>pip install scikit-learn-intelex</code> 
-
-Usage:<br>
-<code>from sklearnex import patch_sklearn
-patch_sklearn()</code>
-
-By integrating Intel® Extension for Scikit-learn*, We achieved substantial acceleration, with performance gains ranging from 10x to 100x across various applications.
-
-* <b>Intel® oneAPI Deep Neural Network Library (oneDNN)</b>
-
-To optimize deep learning applications on Intel® CPUs and GPUs, We integrated the oneAPI Deep Neural Network Library (oneDNN). To enable oneDNN optimizations for TensorFlow* running on Intel® hardware, We used the following code:
-
-<code>os.environ['TF_ENABLE_ONEDNN_OPTS'] = '1'
-os.environ['DNNL_ENGINE_LIMIT_CPU_CAPABILITIES'] = '0'</code> 
-
-Before training our models, We disabled the system allocator using the following code to enhance performance:
-
-<code>os.environ['TF_ONEDNN_USE_SYSTEM_ALLOCATOR'] = '0'</code>
-
-After training and before inference, We re-enabled the system allocator using:
-
-<code>os.environ['TF_ONEDNN_USE_SYSTEM_ALLOCATOR'] = '1'</code>
-
-Moreover, We assumed frozen weights for inference using:
-
-<code>os.environ['TF_ONEDNN_ASSUME_FROZEN_WEIGHTS'] = '1'</code>
-
-* <b>Intel® oneAPI DPC++ Library (oneDPL)</b>
-
-The Intel® oneAPI DPC++ Library (oneDPL) aims to simplify SYCL* programming efforts across devices for high-performance parallel applications. We harnessed the power of oneDPL using specific environment variables to optimize performance and memory utilization.
-
-<code>os.environ['ONEAPI_DEVICE_SELECTOR'] = 'opencl:*'
-os.environ['SYCL_ENABLE_DEFAULT_CONTEXTS'] = '1'
-os.environ['SYCL_ENABLE_FUSION_CACHING'] = '1'</code>
-
-* <b>Intel® oneAPI AI Analytics Toolkit (AI Kit)</b>
-
-The Intel® oneAPI AI Analytics Toolkit (AI Kit) offers an integrated solution for preprocessing, machine learning, and model development. To optimize deep learning training on Intel® XPUs and streamline inference, We utilized the toolkit's Intel®-optimized deep-learning frameworks for TensorFlow*.
-
-<code>pip install --upgrade intel-extension-for-tensorflow[cpu]</code>
-
-We set the backend type to CPU for Intel® Tensorflow Operator Optimization:
-
-<code>os.environ['ITEX_XPU_BACKEND'] = 'CPU'</code>
-
-And enabled Advanced Automatic Mixed Precision for improved inference speed and reduced memory consumption:
-
-<code>os.environ['ITEX_AUTO_MIXED_PRECISION'] = '1'</code>
-
-#### Model Specifics and Usage
-Alzheimer's Disease Prediction and Brain Tumor Detection models are TensorFlow-based. For these, We used the Intel® Extension for TensorFlow* from the AI Kit, oneDAL, oneDPL and oneDNN to enhance performance. Parkinson's Disease Detector was optimized using the Intel® Extension for Scikit-learn from oneDAL.
-
-### Performance Comparison
-The following graphs illustrate the substantial performance improvements achieved by integrating Intel® oneAPI libraries and frameworks into our models:
-1. Comparing execution time of model training for Alzheimer's Disease Prediction<br><br>
-<a href="https://github.com/AK08/Diagnosify.git">
-    <img src="images/Alz.png" >
-</a><br><br>
-2. Comparing execution time of model training for Parkinson's Disease Detector (Best Model)<br><br>
-<a href="https://github.com/AK08/Diagnosify.git">
-    <img src="images/Parkinsons.png" >
-</a><br><br>
-3. Comparing execution time of model training for Brain Tumor Prediction<br><br>
-<a href="https://github.com/AK08/Diagnosify.git">
-    <img src="images/BrainTumor.png" >
-</a><br><br>
-
-By leveraging the power of Intel® oneAPI libraries and frameworks, our models achieves remarkable performance enhancements and optimized memory utilization across various disease prediction models. The seamless integration of oneDAL, oneDNN, oneDPL, and AI Kit contributes to faster training, efficient inference, and improved overall user experience.
+* [![HTML](https://img.shields.io/badge/-HTML-orange?style=flat-square)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+* [![CSS](https://img.shields.io/badge/-CSS-blue?style=flat-square)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+* [![JavaScript](https://img.shields.io/badge/-JavaScript-yellow?style=flat-square)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [![Flask](https://img.shields.io/badge/-Flask-lightgrey?style=flat-square)](https://flask.palletsprojects.com/en/2.1.x/)
 
 <!-- What it does -->
 ## What it does <img src="images/does.png" alt="png" width="30">
-Diagnosify employs sophisticated machine learning algorithms to analyze medical data and images. This enables it to deliver accurate predictions about disease presence, assisting medical experts in making informed decisions. The project develops specialized machine learning models for each disease category, finely tuned to recognize distinct brain disease characteristics. By integrating Intel® oneAPIs, Diagnosify optimizes its performance, ensuring efficient use of hardware resources for quicker and more reliable predictions.
+The AI-Assisted Data Query System (ADQS) simplifies the process of querying and analyzing data through natural language interaction. Users can effortlessly request specific data, and ADQS swiftly delivers comprehensive information along with detailed analysis and visually engaging representations. With its intuitive design and powerful capabilities, ADQS empowers users to explore datasets, gain insights, and make informed decisions—all within a conversational interface. Whether you're a novice or an expert, ADQS makes data analysis accessible and efficient, revolutionizing the way users interact with data.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -180,23 +89,19 @@ These are the steps involved in making this project:
 * Model Compilation
 * Training the Model 
 * Testing Predictions
-* Saving model as 'modelnew.h5'
-* Deploying the Model as a Web Application using Streamlit
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## What we learned <img src="images/learn.png" alt="png" width="30">
-✅Building Diagnosify using oneDNN and Intel oneAPIs has been a transformative journey, providing us with a deep understanding of cutting-edge technologies and their practical applications in the field of brain disease classification. Here's a summary of key learnings from this experience:
+✅Building productname using  Here's a summary of key learnings from this experience:
 
-✅ Hardware Optimization Expertise: Working with oneDNN and Intel oneAPIs exposed us to advanced techniques for optimizing machine learning models on diverse hardware architectures. We gained insights into harnessing the full potential of CPUs, GPUs, and other accelerators, enhancing our ability to design efficient and high-performance solutions.
+✅ Hardware Optimization Expertise: We gained insights into harnessing the full potential of CPUs, GPUs, and other accelerators, enhancing our ability to design efficient and high-performance solutions.
 
-✅Performance-Centric Mindset: Integrating oneDNN taught us to think critically about performance bottlenecks and resource utilization. We learned to fine-tune our models, optimize memory usage, and leverage hardware-specific features to achieve optimal inference speeds.
+✅Performance-Centric Mindset: We learned to fine-tune our models, optimize memory usage, and leverage hardware-specific features to achieve optimal inference speeds.
 
-✅Hardware-Agnostic Deployment: The ability to deploy our models seamlessly on various hardware architectures showcased the power of hardware-agnostic solutions. We gained confidence in creating versatile applications that can adapt to different computing environments.
+✅Model Evaluation:  
 
-✅Model Evaluation:  Working with oneDNN and Intel oneAPIs encouraged us to iterate on model architectures and hyperparameters. We gained proficiency in fine-tuning models for optimal accuracy and performance, resulting in refined brain disease prediction capabilities.
-
-✅Educational Impact: The project's use of advanced technologies like oneDNN and Intel oneAPIs presented opportunities for educational outreach. We learned to convey complex technical concepts to wider audiences, promoting awareness of AI's potential in healthcare.
+✅Educational Impact: We learned to convey complex technical concepts to wider audiences, promoting awareness of AI's potential in healthcare.
 
 ✅Innovation at the Intersection: Diagnosify's creation at the intersection of medicine and technology highlighted the potential for innovative solutions that bridge disciplines. We gained insights into the challenges and rewards of interdisciplinary projects.
 
@@ -213,35 +118,3 @@ Alzheimer - https://www.kaggle.com/datasets/sachinkumar413/alzheimer-mri-dataset
 Parkinsons - https://www.kaggle.com/datasets/kmader/parkinsons-drawings
 
 Brain Tumor - https://github.com/aaronDev28/Brain-datasets/tree/main
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
-[contributors-shield]: https://img.shields.io/github/contributors/AK08/Diagnosify.svg?style=for-the-badge
-[contributors-url]: https://github.com/AK08/Diagnosify/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/AK08/Diagnosify.svg?style=for-the-badge
-[forks-url]: https://github.com/AK08/Diagnosify/network/members
-[stars-shield]: https://img.shields.io/github/stars/AK08/Diagnosify.svg?style=for-the-badge
-[stars-url]: https://github.com/AK08/Diagnosify/stargazers
-[issues-shield]: https://img.shields.io/github/issues/AK08/Diagnosify.svg?style=for-the-badge
-[issues-url]: https://github.com/AK08/Diagnosify/issues
-
-[product-screenshot]: images/screenshot.png
-
-
-
-[python]: https://img.shields.io/badge/Python-3470a3?&logoColor=white
-[python-url]: https://www.python.org/
-[jupyter]: https://img.shields.io/badge/Jupyter%20Notebook-da5b0b?&logoColor=white
-[jupyter-url]: https://jupyter.org/
-[tensorflow]: https://img.shields.io/badge/TensorFlow-f0b93a?&logoColor=white
-[tensorflow-url]: https://www.tensorflow.org/
-[streamlit]: https://img.shields.io/badge/Streamlit-f24747?&logoColor=white
-[streamlit-url]: https://streamlit.io/
-[oneapi]: https://img.shields.io/badge/Intel%20oneAPI-20232A?&logoColor=61DAFB
-[oneapi-url]: https://www.intel.com/content/www/us/en/docs/oneapi/programming-guide/2023-0/intel-oneapi-data-analytics-library-onedal.html
-[onednn]: https://img.shields.io/badge/oneDNN-20232A?&logoColor=61DAFB
-[onednn-url]: https://www.intel.com/content/www/us/en/developer/tools/oneapi/onednn.html
